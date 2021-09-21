@@ -6,11 +6,11 @@ pages = {'A0':(841, 1188), 'A1':(594, 841), 'A2':(420, 594), 'A3':(297, 420) , '
 
 if __name__=='__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--folder', '-f', type=str, required=True)
-    parser.add_argument('--name', '-n', type=str, required=True)
-    parser.add_argument('--margin', '-m', type=int, required=False, default=10)
-    parser.add_argument('--orient', '-o', type=str, required=False, default='L', choices=['L', 'P'])
-    parser.add_argument('--paper', '-p', type=str, required=False, default='A4')
+    parser.add_argument('--folder', '-f', type=str, required=True, help='Folder in which the images are present')
+    parser.add_argument('--name', '-n', type=str, required=True, help='Name of output file, it will created in your cwd')
+    parser.add_argument('--margin', '-m', type=int, required=False, default=10, help='page margin (in mm) to leave at top, bottom, left and right')
+    parser.add_argument('--orient', '-o', type=str, required=False, default='L', choices=['L', 'P'], help='Landscape or potrait')
+    parser.add_argument('--paper', '-p', type=str, required=False, default='A4', help='Type of paper like A4 or A3')
 
     args = parser.parse_args()
     margin = args.margin
